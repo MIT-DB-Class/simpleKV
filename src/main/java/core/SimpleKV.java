@@ -1,6 +1,17 @@
+package core;
+
 import java.io.IOException;
 
 public class SimpleKV implements KeyValue {
+
+    public SimpleKV() {
+
+    }
+
+    @Override
+    public KeyValue initAndMakeStore(String path) {
+	return new SimpleKV();
+    }
 
     @Override
     public void load(String path) throws IOException {
@@ -36,11 +47,6 @@ public class SimpleKV implements KeyValue {
     @Override
     public void commit(int tid) {
 	System.out.println("Done!");
-    }
-
-    @Override
-    public KeyValue initAndMakeStore(String path) {
-	return new SimpleKV();
     }
 
 }

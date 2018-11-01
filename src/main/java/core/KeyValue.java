@@ -1,3 +1,4 @@
+package core;
 import java.io.IOException;
 
 public interface KeyValue {
