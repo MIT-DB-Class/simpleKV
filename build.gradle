@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+}
+
+version = '<KERBEROS-STUDENT-USERNAME>'
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+repositories {
+    jcenter()
+}
