@@ -1,6 +1,7 @@
 package core;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class SimpleKV implements KeyValue {
 
@@ -9,23 +10,31 @@ public class SimpleKV implements KeyValue {
     }
 
     @Override
-    public KeyValue initAndMakeStore(String path) {
+    public SimpleKV initAndMakeStore(String path) {
 	return new SimpleKV();
     }
 
     @Override
-    public void load(String path) throws IOException {
+    public SimpleKV load(String path) throws IOException {
 	System.out.println("Loaded!");
+
+	return null;
     }
 
     @Override
-    public void write(byte[] key, byte[] value) {
+    public void write(char[] key, char[] value) {
 	System.out.println("Written!");
     }
 
     @Override
-    public byte[] read(byte[] key) {
+    public char[] read(char[] key) {
 	System.out.println("Read!");
+	return null;
+    }
+
+    @Override
+    public Iterator<KVPair> readRange(char[] startKey, char[] endKey) {
+	System.out.println("Read range!");
 	return null;
     }
 
@@ -35,13 +44,8 @@ public class SimpleKV implements KeyValue {
     }
 
     @Override
-    public void writeBeginTx(int tid, byte[] key, byte[] value) {
-	System.out.println("Written and began tx!");
-    }
-
-    @Override
-    public void writeEndTx(int tid, byte[] key, byte[] value) {
-	System.out.println("Written and ended tx!");
+    public void beginTx(int tid) {
+	System.out.println("Done!");
     }
 
     @Override

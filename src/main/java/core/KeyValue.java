@@ -1,22 +1,24 @@
 package core;
+
 import java.io.IOException;
+import java.util.Iterator;
 
 public interface KeyValue {
 
-    KeyValue initAndMakeStore(String path);
+    SimpleKV initAndMakeStore(String path);
 
-    void load(String path) throws IOException;
-
-    void write(byte[] key, byte[] value);
-
-    public void writeBeginTx(int tid, byte[] key, byte[] value);
-
-    public void writeEndTx(int tid, byte[] key, byte[] value);
-
-    public void commit(int tid);
-
-    byte[] read(byte[] key);
+    SimpleKV load(String path) throws IOException;
 
     void store(String path) throws IOException;
+
+    void write(char[] key, char[] value);
+
+    char[] read(char[] key);
+
+    Iterator<KVPair> readRange(char[] startKey, char[] endKey);
+
+    void beginTx(int tid);
+
+    public void commit(int tid);
 
 }
