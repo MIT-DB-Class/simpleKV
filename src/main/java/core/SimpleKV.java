@@ -39,11 +39,6 @@ public class SimpleKV implements KeyValue {
     }
 
     @Override
-    public void store(String path) throws IOException {
-	System.out.println("Stored!");
-    }
-
-    @Override
     public void beginTx(int tid) {
 	System.out.println("Done!");
     }
