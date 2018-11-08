@@ -39,12 +39,12 @@ public class SimpleKV implements KeyValue {
     }
 
     @Override
-    public void beginTx(int tid) {
+    public void beginTx() {
 	System.out.println("Done!");
     }
 
     @Override
-    public void commit(int tid) {
+    public void commit() {
 	System.out.println("Done!");
     }
 

@@ -67,21 +67,18 @@ public interface KeyValue {
     /**
      * To implement in Lab 6.
      * 
-     * Indicates that a transaction with id tid is started
+     * Indicates the beginning of a transactions. Note there cannot be multiple
+     * transactions ongoing at the same time.
      * 
-     * @param tid
-     *            an integer that identifies a transaction
      */
-    void beginTx(int tid);
+    void beginTx();
 
     /**
      * To implement in Lab 6.
      * 
-     * Indicates that the transaction with id tid is finished and should be
-     * durable
+     * Indicates that the transaction has finished and should be durable
      * 
-     * @param tid
      */
-    public void commit(int tid);
+    public void commit();
 
 }
