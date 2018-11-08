@@ -1,6 +1,5 @@
 package core;
 
-import java.io.IOException;
 import java.util.Iterator;
 
 public interface KeyValue {
@@ -8,26 +7,14 @@ public interface KeyValue {
     /**
      * To implement in Lab 5.
      * 
-     * Instantiates a SimpleKV object that implements this KeyValue interface
+     * Instantiates a SimpleKV object that implements this KeyValue interface if
+     * the path given is empty. If the path is non-empty, it loads the data.
      * 
      * @param path
      *            Path to the file that stores the data.
      * @return SimpleKV object
      */
     SimpleKV initAndMakeStore(String path);
-
-    /**
-     * To implement in Lab 5.
-     * 
-     * Instantiates a SimpleKV object that implements this KeyValue interface,
-     * and points to data living in path
-     * 
-     * @param path
-     *            Path to the file that stores the data.
-     * @return SimpleKV object
-     * @throws IOException
-     */
-    SimpleKV load(String path) throws IOException;
 
     /**
      * To implement in Lab 5.

@@ -1,6 +1,5 @@
 package core;
 
-import java.io.IOException;
 import java.util.Iterator;
 
 public class SimpleKV implements KeyValue {
@@ -12,13 +11,6 @@ public class SimpleKV implements KeyValue {
     @Override
     public SimpleKV initAndMakeStore(String path) {
 	return new SimpleKV();
-    }
-
-    @Override
-    public SimpleKV load(String path) throws IOException {
-	System.out.println("Loaded!");
-
-	return null;
     }
 
     @Override
